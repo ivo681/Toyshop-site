@@ -14,7 +14,7 @@ public class BankAccountDailyCheck {
     }
 
     @Transactional
-    @Scheduled(cron = "0 32 11 * * *")
+    @Scheduled(cron = "0 55 23 * * *")
     public void subtractBlockedAmounts(){
         this.bankAccountService.removeBlockedAmountsAndTransferToShop();
     }
