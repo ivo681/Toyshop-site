@@ -20,6 +20,11 @@ public class HomeController {
         return "redirect:/home";
     }
 
+    @GetMapping("/about-us")
+    public String aboutUs() {
+        return "about-us";
+    }
+
     @GetMapping("/home")
     public String home() {
         return "home";
