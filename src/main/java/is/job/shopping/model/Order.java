@@ -3,6 +3,7 @@ package is.job.shopping.model;
 import is.job.shopping.model.enums.OrderStatusEnum;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +12,9 @@ import java.util.Set;
 public class Order extends BaseEntity{
     private Set<Product> products = new HashSet<>();
     private User user;
+    private Long number;
     private OrderStatusEnum orderStatus;
+    private LocalDate date;
     private Set<BankTransaction> bankTransactions = new HashSet<>();
 
     public Order() {
@@ -57,5 +60,23 @@ public class Order extends BaseEntity{
 
     public void setBankTransactions(Set<BankTransaction> bankTransactions) {
         this.bankTransactions = bankTransactions;
+    }
+
+    @Column(name = "number", nullable = false)
+    public Long getNumber() {
+        return number;
+    }
+
+    public void setNumber(Long number) {
+        this.number = number;
+    }
+
+    @Column(name = "date", nullable = false)
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }

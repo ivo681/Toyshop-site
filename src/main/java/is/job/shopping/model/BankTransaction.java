@@ -12,6 +12,7 @@ import java.util.Set;
 public class BankTransaction extends BaseEntity{
     private Set<Order> orders;
     private BankAccount bankAccount;
+    private Long number;
     private BigDecimal amount;
     private TransactionStatusEnum transactionStatus;
     private LocalDate date;
@@ -63,5 +64,14 @@ public class BankTransaction extends BaseEntity{
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    @Column(name = "number", nullable = false, unique = true)
+    public Long getNumber() {
+        return number;
+    }
+
+    public void setNumber(Long number) {
+        this.number = number;
     }
 }

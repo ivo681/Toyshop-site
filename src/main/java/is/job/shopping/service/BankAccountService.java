@@ -8,8 +8,6 @@ public interface BankAccountService {
 
     boolean checkIfBankIsValid(String number, int cvv, String fullName, LocalDate validTo);
 
-    boolean checkExpirationDate(LocalDate validTo);
-
     boolean hasEnoughBalance(String orderId, String number);
 
     String createUnsuccessfulTransaction(String orderId, String number);

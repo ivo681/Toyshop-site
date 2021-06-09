@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.security.Principal;
 
 @Controller
-@RequestMapping("/order")
+@RequestMapping("/orders")
 public class OrderController {
     private final ProductService productService;
     private final OrderService orderService;
@@ -36,7 +36,7 @@ public class OrderController {
         if (!model.containsAttribute("orderBindingModel")){
             model.addAttribute("orderBindingModel", new OrderBindingModel());
         }
-        model.addAttribute("action", "/order/ocean");
+        model.addAttribute("action", "/orders/ocean");
         return "order";
     }
 
@@ -48,7 +48,7 @@ public class OrderController {
         if (!model.containsAttribute("orderBindingModel")){
             model.addAttribute("orderBindingModel", new OrderBindingModel());
         }
-        model.addAttribute("action", "/order/night");
+        model.addAttribute("action", "/orders/night");
         return "order";
     }
 
@@ -60,8 +60,14 @@ public class OrderController {
         if (!model.containsAttribute("orderBindingModel")){
             model.addAttribute("orderBindingModel", new OrderBindingModel());
         }
-        model.addAttribute("action", "/order/rose");
+        model.addAttribute("action", "/orders/rose");
         return "order";
+    }
+
+    @GetMapping("/personal")
+    public String viewPersonalOrders(Model model, Principal principal){
+        model.addAttribute("orders", this.orderService.getUserOrders(principal.getName()));
+        return "orders-list";
     }
 
     @PostMapping("/ocean")
@@ -79,7 +85,7 @@ public class OrderController {
             return "order";
         }
         String orderId = this.orderService.createOrder(orderBindingModel.getQuantity(), "Ocean Plushie", userEmail);
-        return "redirect:/order/" + orderId;
+        return "redirect:/orders/" + orderId;
     }
 
     @PostMapping("/night")
@@ -97,7 +103,7 @@ public class OrderController {
             return "order";
         }
         String orderId = this.orderService.createOrder(orderBindingModel.getQuantity(), "Night Plushie", userEmail);
-        return "redirect:/order/" + orderId;
+        return "redirect:/orders/" + orderId;
     }
 
     @PostMapping("/rose")
@@ -115,7 +121,7 @@ public class OrderController {
             return "order";
         }
         String orderId = this.orderService.createOrder(orderBindingModel.getQuantity(), "Rose Plushie", userEmail);
-        return "redirect:/order/" + orderId;
+        return "redirect:/orders/" + orderId;
     }
 
     @GetMapping("/{id}")
@@ -124,7 +130,7 @@ public class OrderController {
         if (!model.containsAttribute("bankAccountBindingModel")){
             model.addAttribute("bankAccountBindingModel", new BankAccountBindingModel());
         }
-        model.addAttribute("action", "/order/complete-" + orderId);
+        model.addAttribute("action", "/orders/complete-" + orderId);
         return "order-complete";
     }
 
