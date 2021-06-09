@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/fragments :: header">
+</head>
+
+<body>
+<header>
+    <nav th:replace="fragments/fragments :: navigation"></nav>
+</header>
+
+    <main>
+        <section class="py-5 container">
+            <form class="form" th:object="${bankAccountBindingModel}" th:action="@{${action}}"
+                  th:method="post">
+                <h1 class="header-home">Complete purchase</h1>
+                <h2 th:text="${orderDetails}" class="header-home"></h2>
+                <!-- Form start -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Card number</label>
+                            <input th:field="*{number}" th:errorclass="is-invalid" name="number"
+                                   type="number" minlength="16" maxlength="16"
+                                   class="form-control input-md" required autofocus>
+                            <small th:each="e : ${#fields.errors('number')}" th:text="${e}"
+                                   class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Expiry date:</label>
+                            <input th:field="*{validTo}" th:errorclass="is-invalid" name="validTo"
+                                   type="date"
+                                   class="form-control input-md" required autofocus>
+                            <small th:each="e : ${#fields.errors('validTo')}" th:text="${e}"
+                                   class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">CVV</label>
+                            <input th:field="*{cvv}" th:errorclass="is-invalid" name="cvv"
+                                   type="number" min="100" max="999"
+                                   class="form-control input-md" required autofocus>
+                            <small th:each="e : ${#fields.errors('cvv')}" th:text="${e}"
+                                   class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Full Name</label>
+                            <input th:field="*{fullName}" th:errorclass="is-invalid"
+                                   name="fullName" type="text"
+                                   class="form-control input-md" required autofocus>
+                            <small th:each="e : ${#fields.errors('fullName')}" th:text="${e}"
+                                   class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+<footer th:replace="fragments/fragments :: footer">
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+
+.invalid{
+  margin: 0 0 15px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-register {
+  width: 100%;
+  max-width: 370px;
+  padding: 15px;
+  margin: auto;
+}
+.form-register .checkbox {
+  font-weight: 400;
+}
+.form-register .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-register .form-control:focus {
+  z-index: 2;
+}
+.form-register input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-register input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+main{
+  
+  line-height: 20px;
+  
+  
+}
+
+body{
+  background: url("/images/nxvptuu.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height:100%;
+  overflow:auto;
+  /* position: relative; */
+}
+
+main{
+  padding-bottom: 100px;
+}
+
+footer {
+  position: fixed;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    padding:20px 0px 0px 0px;
+}
+
+.logged-in {
+  background:url("/images/ThinkstockPhotos-842852832.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.about-us-row{
+    margin: 10px auto;
+    position: relative;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    text-align: center;
+}
+
+.about {
+  width: 100%; /* You can set the dimensions to whatever you want */
+  height: 300px;
+  /* object-fit:contain; */
+}
+
+.logo{
+  height: auto;
+    width: auto;
+    position: relative;
+    max-height: 90px;
+    max-width: 250px;
+}
+
+.stamp{
+    height: auto;
+    width: auto;
+    position: relative;
+    max-height: 150px;
+    max-width: 250px;
+}
+
+.prescription-row{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.footer-about {
+  position:fixed;
+  margin-top: -150px; /* negative value of footer height */
+  height: 60px;
+  clear:both;
+  padding-top:20px;
+  margin-bottom:-20px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+  }
+}
+
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: white;
+  text-shadow: none;
+  background-color: #EF3B3A;
+  display:block; width:150px; margin:0 auto;
+}
+
+.secondary-paragraph {
+  display:block; 
+  width: 300px; 
+  margin:0 auto;
+  text-align: center;
+}
+
+.login-page {
+  width: 360px;
+  padding: 2% 0 0;
+  margin: auto;
+}
+
+.register-page {
+  width: 360px;
+  padding: 2% 0 0;
+  margin: auto;
+  
+}
+
+.well-block {
+  background-color: #fff;
+  border: 1px solid #e9e6e8;
+  padding: 40px;
+}
+
+.well-title {
+  margin-bottom: 40px;
+}
+
+.form {
+  /*z-index: 1;*/
+  background: #FFFFFF;
+  /* max-width: 100%; */
+  margin: 0 auto 50px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input:not([type='radio']) {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type="checkbox"], 
+input[type="radio"],
+input.radio,
+input.checkbox {
+  vertical-align:auto;
+  width:13px;
+  height:13px;
+  position:relative;
+  overflow:hidden;
+  top:2px;
+}
+
+
+
+.radio-inline{
+  font-family: "Roboto", sans-serif;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+h1{
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.form button {
+  margin-top: 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: block;
+}
+.container {
+  position: relative;
+  /* z-index: 1; */
+  max-width: 1400px;
+  margin: 150px auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer-container{
+  padding-left: var(--bs-gutter-x,.75rem);
+  box-sizing: border-box;
+}
+
+input:valid{
+  border: lawngreen solid 2px;
+}
+
+select:valid{
+  border: lawngreen solid 2px;
+}
+
+input:invalid{
+  border: red solid 2px;
+}
+
+select:invalid{
+  border: red solid 2px;
+}
+
+input:invalid:required{
+  background-image: linear-gradient(lightgrey, lightgrey);
+}
+
+select:invalid:required{
+  background-image: linear-gradient(lightgrey, lightgrey);
+}

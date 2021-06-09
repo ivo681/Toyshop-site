@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/fragments :: header">
+</head>
+
+<body>
+<header>
+    <nav th:replace="fragments/fragments :: navigation"></nav>
+</header>
+
+    <main>
+        <section class="py-5">
+            
+            <div class="album">
+                <div class="container">
+                    <h1 class="card fw-light">Available toys:</h1>
+
+                    <div class="about-us-row">
+                        <div th:if="${ocean} > 0" class="col-md-4 g-3 mx-auto">
+                            <div class="card shadow-sm">
+                                <img class="container about" src="/images/ReversiblePlushies_Octopus-1-1000x1000.jpg">
+
+                                <div class="card-body">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Ocean Plushie</h5>
+                                        <h6 id="ocean" th:utext="'Available:'+ ${ocean}" class="mb-0"></h6>
+                                        <h7 th:utext="'Only for:' + ${oceanPrice}" class="mb-0"></h7>
+                                        <a id="ocean-button" th:href="@{/order/ocean}"
+                                           class="btn btn-success btn-xs"><span class="glyphicon "></span>
+                                            Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div th:if="${night} > 0" class="col-md-4 g-3 mx-auto">
+                            <div class="card shadow-sm">
+                                <img class="container about" src="/images/41dWJqoWvKL._AC_SX425_.jpg">
+
+                                <div class="card-body">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Night Plushie</h5>
+                                        <h6 id="night" th:utext="'Available:' + ${night}" class="mb-0"></h6>
+                                        <h7 th:utext="'Only for:' + ${nightPrice}" class="mb-0"></h7>
+                                        <a id="night-button" th:href="@{/order/night}"
+                                           class="btn btn-success btn-xs"><span class="glyphicon "></span>
+                                            Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div th:if="${rose} > 0" class="col-md-4 g-3 mx-auto">
+                            <div class="card shadow-sm">
+                                <img class="container about" src="/images/61ldFT0+MMS._AC_SL1200_.jpg">
+
+                                <div class="card-body">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Rose Plushie</h5>
+                                        <h6 id="rose" th:utext="'Available:'+ ${rose}" class="mb-0"></h6>
+                                        <h7 th:utext="'Only for:' + ${rosePrice}" class="mb-0"></h7>
+                                        <a id="rose-button" th:href="@{/order/rose}"
+                                           class="btn btn-success btn-xs"><span class="glyphicon "></span>
+                                            Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<footer th:replace="fragments/fragments :: footer">
+</footer>
+
+</body>
+
+</html>

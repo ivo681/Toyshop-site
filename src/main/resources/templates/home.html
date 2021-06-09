@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/fragments::header">
+</head>
+
+<body>
+    <header>
+        <nav th:replace="fragments/fragments::navigation">
+        </nav>
+    </header>
+    <iframe src="http://free.timeanddate.com/clock/i7peu5ok/n238/pct/avt/ftb/bo2/tt0/td1/th1/tb4" frameborder="0" width="219" height="38" allowTransparency="true"></iframe>
+    <main>
+        <section class="py-5 container">
+        <div class="form">
+
+<!--            <h1 class="fw-light">Doctor Menu</h1>-->
+            <!-- <div class="row col-md-6 col-md-offset-2 custyle"> -->
+            <div class="row justify-content-center">
+                <div class="col-sm-3 p-2">
+                    <div class="card align-items-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Make an Order</h5>
+                            <a th:href="@{/products/all}" class="btn btn-success">Select</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                    <div class="card align-items-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">My Orders</h5>
+                            <a th:href="@{/airlines/all}" class="btn btn-success">Select</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer th:replace="fragments/fragments::footer">
+    </footer>
+
+</body>
+
+</html>

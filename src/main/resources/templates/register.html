@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/fragments :: header">
+</head>
+
+<body class="patient-login">
+<header>
+    <nav th:replace="fragments/fragments :: navigation"></nav>
+</header>
+    <main>
+    <section class="py-5">
+        <div class="form-register">
+            <form th:object="${userRegisterBindingModel}" class="form" th:action="@{/users/register}" method="POST">
+                <h1 class="h3 mb-3 fw-normal">Register a new inspector</h1>
+                <h3 th:each="e : ${#fields.errors('email')}" th:text="${e}"
+                    class="text-light form-text bg-danger rounded"></h3>
+                <input th:field="*{firstName}" th:errorclass="is-invalid" type="text" name="firstName"
+                       placeholder="First name" required minlength="3"/>
+                <small id="firstNameError" th:each="e : ${#fields.errors('firstName')}" th:text="${e}"
+                       class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                <input th:field="*{lastName}" th:errorclass="is-invalid" type="text" name="lastName"
+                       placeholder="Last name" required minlength="3" />
+                <small id="lastNameError" th:each="e : ${#fields.errors('lastName')}" th:text="${e}"
+                       class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                <input th:field="*{email}" th:errorclass="is-invalid" type="email" name="email" placeholder="Email" required />
+                <input th:field="*{password}" th:errorclass="is-invalid" type="password" name="password"
+                       placeholder="Password" minlength="8" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#$%^&+=])(?=\S+$).{8,}"
+                       title="Password must be at least 8 characters long, including: 1 uppercase, 1 lowercase, 1 number, 1 special character" required />
+                <small id="passwordError" th:each="e : ${#fields.errors('password')}" th:text="${e}"
+                       class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                <input th:field="*{confirmPassword}" th:errorclass="is-invalid" type="password" name="confirmPassword"
+                       placeholder="Confirm password" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#$%^&+=])(?=\S+$).{8,}"
+                       title="Password must be at least 8 characters long, including: 1 uppercase, 1 lowercase, 1 number, 1 special character" required />
+                <small id="confirmPasswordError" th:each="e : ${#fields.errors('confirmPassword')}" th:text="${e}"
+                       class="invalid invalid-feedback text-light form-text bg-danger rounded"></small>
+                <button class="w-100 btn btn-lg btn-success" type="submit" >Register</button>
+                    <p class="message">Already registered? <a th:href="@{/users/login}">Sign In</a></p>
+            </form>
+        </div>
+    </section>
+    </main>
+
+<footer th:replace="fragments/fragments :: footer">
+</footer></body>
+
+</html>
